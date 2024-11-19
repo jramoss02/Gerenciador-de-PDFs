@@ -139,6 +139,4 @@ Se tiver dúvidas ou sugestões, entre em contato:
 - **Email**: 02.jrsramos@gmail.com
 - **LinkedIn**: [José Ramos](https://linkedin.com/in/josé-roberto-ramos)
 
-
-
 --- 
