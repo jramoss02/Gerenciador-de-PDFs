@@ -14,6 +14,7 @@ class PDFMergerApp:
 
         tk.Button(button_frame, text="Adicionar PDFs", command=self.adicionar_pdfs).pack(side=tk.LEFT, padx=5)
         tk.Button(button_frame, text="Remover Selecionado", command=self.remover_pdf).pack(side=tk.LEFT, padx=5)
+        tk.Button(button_frame, text="Remover Todos", command=self.remover_todos).pack(side=tk.LEFT, padx=5)
         tk.Button(button_frame, text="Mover Para Cima", command=self.mover_para_cima).pack(side=tk.LEFT, padx=5)
         tk.Button(button_frame, text="Mover Para Baixo", command=self.mover_para_baixo).pack(side=tk.LEFT, padx=5)
         tk.Button(button_frame, text="Combinar PDFs", command=self.combinar_pdfs).pack(side=tk.RIGHT, padx=5)
@@ -40,6 +41,13 @@ class PDFMergerApp:
             self.pdf_listbox.delete(indice)
         else:
             messagebox.showwarning("Aviso", "Nenhum item selecionado para remover.")
+
+    def remover_todos(self):
+        if self.pdf_list:
+            self.pdf_list.clear()
+            self.pdf_listbox.delete(0, tk.END)
+        else:
+            messagebox.showwarning("Aviso", "A lista já está vazia.")
 
     def mover_para_cima(self):
         selecionado = self.pdf_listbox.curselection()
