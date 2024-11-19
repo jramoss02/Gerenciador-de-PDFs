@@ -1,5 +1,6 @@
+import os
 import tkinter as tk
-from tkinter import filedialog, messagebox, ttk
+from tkinter import filedialog, messagebox
 from pypdf import PdfReader, PdfWriter
 
 class PDFMergerApp:
@@ -28,7 +29,8 @@ class PDFMergerApp:
         for arquivo in arquivos:
             if arquivo not in self.pdf_list:
                 self.pdf_list.append(arquivo)
-                self.pdf_listbox.insert(tk.END, arquivo)
+                nome_arquivo = os.path.basename(arquivo)
+                self.pdf_listbox.insert(tk.END, nome_arquivo)
 
     def remover_pdf(self):
         selecionado = self.pdf_listbox.curselection()
@@ -46,7 +48,7 @@ class PDFMergerApp:
             if indice > 0:
                 self.pdf_list[indice], self.pdf_list[indice - 1] = self.pdf_list[indice - 1], self.pdf_list[indice]
                 self.pdf_listbox.delete(indice)
-                self.pdf_listbox.insert(indice - 1, self.pdf_list[indice - 1])
+                self.pdf_listbox.insert(indice - 1, os.path.basename(self.pdf_list[indice - 1]))
                 self.pdf_listbox.select_set(indice - 1)
         else:
             messagebox.showwarning("Aviso", "Nenhum item selecionado para mover.")
@@ -56,11 +58,9 @@ class PDFMergerApp:
         if selecionado:
             indice = selecionado[0]
             if indice < len(self.pdf_list) - 1:
-
                 self.pdf_list[indice], self.pdf_list[indice + 1] = self.pdf_list[indice + 1], self.pdf_list[indice]
-
                 self.pdf_listbox.delete(indice)
-                self.pdf_listbox.insert(indice + 1, self.pdf_list[indice + 1])
+                self.pdf_listbox.insert(indice + 1, os.path.basename(self.pdf_list[indice + 1]))
                 self.pdf_listbox.select_set(indice + 1)
         else:
             messagebox.showwarning("Aviso", "Nenhum item selecionado para mover.")
