@@ -12,13 +12,16 @@ O **Gerenciador de PDFs** é uma aplicação gráfica desenvolvida em Python que
 2. **Remover Selecionado**  
    Remove um arquivo PDF específico da lista.
 
-3. **Mover Para Cima/Para Baixo**  
+3. **Remover Todos**
+   Remove todos os arquivos da lista.
+
+5. **Mover Para Cima/Para Baixo**  
    Altera a ordem dos arquivos na lista, garantindo que eles sejam combinados na sequência desejada.
 
-4. **Combinar PDFs**  
+6. **Combinar PDFs**  
    Une todos os PDFs da lista em um único arquivo, permitindo salvar o resultado em qualquer local desejado.
 
-5. **Visualizar a Lista de PDFs**  
+7. **Visualizar a Lista de PDFs**  
    Exibe em uma lista todos os arquivos adicionados, facilitando a organização.
 
 ---
