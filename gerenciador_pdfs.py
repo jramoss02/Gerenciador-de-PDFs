@@ -29,23 +29,18 @@ class PDFMergerApp:
         tk.Button(button_frame, text="Mover Para Baixo", command=self.mover_para_baixo).pack(side=tk.LEFT, padx=5)
         tk.Button(button_frame, text="Combinar PDFs", command=self.combinar_pdfs).pack(side=tk.RIGHT, padx=5)
 
-        # Divisão da tela em dois frames (Listbox + Miniaturas)
         self.split_frame = tk.Frame(main_frame)
         self.split_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
 
-        # Frame da Listbox (centralizado)
         self.listbox_frame = tk.Frame(self.split_frame)
         self.listbox_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-        # Listbox para os PDFs
         self.pdf_listbox = tk.Listbox(self.listbox_frame, selectmode=tk.SINGLE, height=15)
         self.pdf_listbox.pack(fill=tk.BOTH, expand=True)
 
-        # Frame das miniaturas
         self.thumb_frame = tk.Frame(self.split_frame)
         self.thumb_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=5)
 
-        # Canvas para exibir miniaturas
         self.canvas = tk.Canvas(self.thumb_frame)
         self.canvas.pack(side=tk.LEFT, fill=tk.Y, expand=True)
 
@@ -139,11 +134,9 @@ class PDFMergerApp:
             messagebox.showerror("Erro", f"Falha ao combinar PDFs: {e}")
 
     def atualizar_visualizador(self):
-        # Limpa a área das miniaturas
         for widget in self.canvas_frame.winfo_children():
             widget.destroy()
 
-        # Adiciona miniaturas dos PDFs
         for arquivo in self.pdf_list:
             try:
                 reader = PdfReader(arquivo)
@@ -152,7 +145,7 @@ class PDFMergerApp:
                     if img:
                         tk_img = ImageTk.PhotoImage(img)
                         lbl = tk.Label(self.canvas_frame, image=tk_img)
-                        lbl.image = tk_img  # Para evitar garbage collection
+                        lbl.image = tk_img
                         lbl.pack(pady=5)
             except Exception as e:
                 print(f"Erro ao carregar {arquivo}: {e}")
