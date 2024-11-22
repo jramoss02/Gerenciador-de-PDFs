@@ -1,6 +1,10 @@
+Aqui está a versão atualizada do seu **README** com as modificações para incluir a visualização das miniaturas na lateral da interface gráfica:
+
+---
+
 # Gerenciador de PDFs
 
-O **Gerenciador de PDFs** é uma aplicação gráfica desenvolvida em Python que permite adicionar, remover, alterar a sequência e combinar arquivos PDF. A ferramenta é ideal para usuários que precisam organizar e mesclar documentos PDF de forma simples e intuitiva.
+O **Gerenciador de PDFs** é uma aplicação gráfica desenvolvida em Python que permite adicionar, remover, alterar a sequência e combinar arquivos PDF. A ferramenta é ideal para usuários que precisam organizar e mesclar documentos PDF de forma simples e intuitiva, agora com a funcionalidade de visualizar miniaturas das páginas do PDF.
 
 ---
 
@@ -24,6 +28,9 @@ O **Gerenciador de PDFs** é uma aplicação gráfica desenvolvida em Python que
 6. **Visualizar a Lista de PDFs**  
    Exibe em uma lista todos os arquivos adicionados, facilitando a organização.
 
+7. **Exibição de Miniaturas**  
+   Mostra uma prévia das páginas de cada PDF adicionado, com miniaturas das páginas exibidas em uma área lateral. Isso facilita a visualização rápida do conteúdo dos PDFs antes de combiná-los.
+
 ---
 
 ## 🛠️ **Tecnologias Utilizadas**
@@ -31,6 +38,8 @@ O **Gerenciador de PDFs** é uma aplicação gráfica desenvolvida em Python que
 - **Python**: Linguagem principal do projeto.
 - **Tkinter**: Para criação da interface gráfica.
 - **PyPDF**: Para manipulação e combinação de arquivos PDF.
+- **Pillow (PIL)**: Para manipulação de imagens, utilizada para exibição das miniaturas dos PDFs.
+- **pdf2image**: Para conversão das páginas do PDF em imagens.
 
 ---
 
@@ -41,7 +50,7 @@ O **Gerenciador de PDFs** é uma aplicação gráfica desenvolvida em Python que
 1. **Python 3.8+** instalado no computador.
 2. Instalar as bibliotecas necessárias:
    ```bash
-   pip install pypdf
+   pip install pypdf pillow pdf2image
    ```
 
 ---
@@ -82,14 +91,17 @@ Para criar um executável do projeto que funcione sem o Python instalado:
 ## 🖼️ **Interface do Usuário**
 
 ### Tela Principal
-1. Botões para gerenciar os arquivos PDF:
+
+1. **Botões para gerenciar os arquivos PDF**:
    - **Adicionar PDFs**
    - **Remover Selecionado**
    - **Mover Para Cima**
    - **Mover Para Baixo**
    - **Combinar PDFs**
 
-2. Lista central para exibição dos PDFs adicionados.
+2. **Lista centralizada**: Exibe todos os arquivos PDF adicionados de forma centralizada, com a opção de alterar a ordem ou remover os arquivos.
+
+3. **Exibição de miniaturas**: As páginas dos PDFs são convertidas para imagens e exibidas como miniaturas em uma área lateral da interface, permitindo visualizar rapidamente as páginas dos documentos.
 
 ---
 
@@ -141,5 +153,3 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 Se tiver dúvidas ou sugestões, entre em contato:
 - **Email**: 02.jrsramos@gmail.com
 - **LinkedIn**: [José Ramos](https://linkedin.com/in/josé-roberto-ramos)
-
---- 
