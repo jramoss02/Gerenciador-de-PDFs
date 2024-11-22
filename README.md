@@ -1,7 +1,3 @@
-Aqui está a versão atualizada do seu **README** com as modificações para incluir a visualização das miniaturas na lateral da interface gráfica:
-
----
-
 # Gerenciador de PDFs
 
 O **Gerenciador de PDFs** é uma aplicação gráfica desenvolvida em Python que permite adicionar, remover, alterar a sequência e combinar arquivos PDF. A ferramenta é ideal para usuários que precisam organizar e mesclar documentos PDF de forma simples e intuitiva, agora com a funcionalidade de visualizar miniaturas das páginas do PDF.
